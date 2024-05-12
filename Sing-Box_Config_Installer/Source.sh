@@ -2130,10 +2130,10 @@ install_core() {
     mkdir /root/singbox && cd /root/singbox || exit
     LATEST_URL=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/SagerNet/sing-box/releases/latest)
     LATEST_VERSION="$(echo $LATEST_URL | grep -o -E '/.?[0-9|\.]+$' | grep -o -E '[0-9|\.]+')"
-    LINK="https://github.com/SagerNet/sing-box/releases/download/v${LATEST_VERSION}/sing-box-${LATEST_VERSION}-linux-amd64.tar.gz"
+    LINK="https://github.com/SagerNet/sing-box/releases/download/v${LATEST_VERSION}/sing-box-${LATEST_VERSION}-linux-arm64.tar.gz"
     wget "$LINK"
-    tar -xf "sing-box-${LATEST_VERSION}-linux-amd64.tar.gz"
-    cp "sing-box-${LATEST_VERSION}-linux-amd64/sing-box" "/usr/bin/$Protocol"
+    tar -xf "sing-box-${LATEST_VERSION}-linux-arm64.tar.gz"
+    cp "sing-box-${LATEST_VERSION}-linux-arm64/sing-box" "/usr/bin/$Protocol"
     cd && rm -rf singbox
 }
 
