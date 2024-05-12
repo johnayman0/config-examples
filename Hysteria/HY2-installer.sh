@@ -6,13 +6,13 @@ install_hysteria() {
     curl -Lo /root/hysteria2 https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64 && chmod +x /root/hysteria2 && mv -f /root/hysteria2 /usr/bin
 
     # Step 2: Create a directory for Hysteria configuration and download the server.yaml file
-    mkdir -p /etc/hysteria2 && curl -Lo /etc/hysteria2/server.yaml https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Hysteria/2/server-auto.yaml
+    mkdir -p /etc/hysteria2 && curl -Lo /etc/hysteria2/server.yaml https://raw.githubusercontent.com/johnayman0/config-examples/main/Hysteria/2/server-auto.yaml
 
     # Step 3: download the hysteria2.service file
-    curl -Lo /etc/systemd/system/hysteria2.service raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Hysteria/2/hysteria2.service && systemctl daemon-reload
+    curl -Lo /etc/systemd/system/hysteria2.service raw.githubusercontent.com/johnayman0/config-examples/main/Hysteria/2/hysteria2.service && systemctl daemon-reload
 
     # Step 4: download the acl.txt file
-    curl -Lo /etc/hysteria2/acl.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Hysteria/2/acl.txt
+    curl -Lo /etc/hysteria2/acl.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Hysteria/2/acl.txt
 
     # Step 5: Prompt the user to enter a port and replace "PORT" in the server.yaml file
     read -p "Please enter a port: " user_port
@@ -55,10 +55,10 @@ modify_hysteria() {
     rm -rf /etc/hysteria2
 
     # download the server-auto.yaml file
-    mkdir -p /etc/hysteria2 && curl -Lo /etc/hysteria2/server.yaml https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Hysteria/2/server-auto.yaml
+    mkdir -p /etc/hysteria2 && curl -Lo /etc/hysteria2/server.yaml https://raw.githubusercontent.com/johnayman0/config-examples/main/Hysteria/2/server-auto.yaml
 
     # download the acl.txt file
-    curl -Lo /etc/hysteria2/acl.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Hysteria/2/acl.txt
+    curl -Lo /etc/hysteria2/acl.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Hysteria/2/acl.txt
 
     # Prompt the user to enter a port and replace "PORT" in the server.yaml file
     read -p "Please enter a port: " user_port
