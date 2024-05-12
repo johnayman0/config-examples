@@ -1,17 +1,17 @@
 #!/bin/bash
 
 legacy() {
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box_Config_Installer/Legacy-Menu.sh)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box_Config_Installer/Legacy-Menu.sh)"
     exit 0
 }
 
 tui() {
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box_Config_Installer/TUI-Menu.sh)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box_Config_Installer/TUI-Menu.sh)"
     exit 0
 }
 
 optimize_server() {
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheyCallMeSecond/Linux-Optimizer/main/linux-optimizer.sh)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/johnayman0/Linux-Optimizer/main/linux-optimizer.sh)"
     clear
 }
 
@@ -24,12 +24,12 @@ install_hysteria() {
     mkdir -p /etc/hysteria2
 
     if [ "$Transport" == "native" ]; then
-        curl -Lo /etc/hysteria2/server.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Hysteria2.json
+        curl -Lo /etc/hysteria2/server.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Hysteria2.json
     elif [ "$Transport" == "obfs" ]; then
-        curl -Lo /etc/hysteria2/server.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Hysteria2-obfs.json
+        curl -Lo /etc/hysteria2/server.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Hysteria2-obfs.json
     fi
 
-    curl -Lo /etc/systemd/system/SH.service https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/SH.service
+    curl -Lo /etc/systemd/system/SH.service https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/SH.service
     systemctl daemon-reload
 
     get_selfsigned_cert hysteria2
@@ -103,9 +103,9 @@ modify_hysteria_config() {
     mkdir -p /etc/hysteria2
 
     if [ "$Transport" == "native" ]; then
-        curl -Lo /etc/hysteria2/server.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Hysteria2.json
+        curl -Lo /etc/hysteria2/server.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Hysteria2.json
     elif [ "$Transport" == "obfs" ]; then
-        curl -Lo /etc/hysteria2/server.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Hysteria2-obfs.json
+        curl -Lo /etc/hysteria2/server.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Hysteria2-obfs.json
     fi
 
     get_selfsigned_cert hysteria2
@@ -191,8 +191,8 @@ install_tuic() {
 
         mkdir -p /etc/tuic
 
-        curl -Lo /etc/tuic/server.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Tuic.json
-        curl -Lo /etc/systemd/system/TS.service https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/TS.service
+        curl -Lo /etc/tuic/server.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Tuic.json
+        curl -Lo /etc/systemd/system/TS.service https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/TS.service
         systemctl daemon-reload
 
         get_selfsigned_cert tuic
@@ -256,7 +256,7 @@ modify_tuic_config() {
 
         mkdir -p /etc/tuic
 
-        curl -Lo /etc/tuic/server.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Tuic.json
+        curl -Lo /etc/tuic/server.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Tuic.json
 
         get_selfsigned_cert tuic
 
@@ -330,12 +330,12 @@ install_reality() {
     mkdir -p /etc/reality
 
     if [ "$Transport" == "grpc" ]; then
-        curl -Lo /etc/reality/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Reality-gRPC.json
+        curl -Lo /etc/reality/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Reality-gRPC.json
     elif [ "$Transport" == "tcp" ]; then
-        curl -Lo /etc/reality/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Reality-tcp.json
+        curl -Lo /etc/reality/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Reality-tcp.json
     fi
 
-    curl -Lo /etc/systemd/system/RS.service https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/RS.service
+    curl -Lo /etc/systemd/system/RS.service https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/RS.service
     systemctl daemon-reload
 
     uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -415,9 +415,9 @@ modify_reality_config() {
     mkdir -p /etc/reality
 
     if [ "$Transport" == "grpc" ]; then
-        curl -Lo /etc/reality/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Reality-gRPC.json
+        curl -Lo /etc/reality/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Reality-gRPC.json
     elif [ "$Transport" == "tcp" ]; then
-        curl -Lo /etc/reality/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Reality-tcp.json
+        curl -Lo /etc/reality/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Reality-tcp.json
     fi
 
     uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -534,12 +534,12 @@ install_shadowtls() {
 
         mkdir -p /etc/shadowtls
 
-        curl -Lo /etc/shadowtls/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/ShadowTLS.json
-        curl -Lo /etc/shadowtls/user-nekorayconfig.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Client/ShadowTLS-nekoray.json
-        curl -Lo /etc/shadowtls/user-nekoboxconfig.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Client/ShadowTLS-nekobox.json
-        curl -Lo /etc/shadowtls/nekorayconfig.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Client/ShadowTLS-nekoray.json
-        curl -Lo /etc/shadowtls/nekoboxconfig.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Client/ShadowTLS-nekobox.json
-        curl -Lo /etc/systemd/system/ST.service https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/ST.service
+        curl -Lo /etc/shadowtls/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/ShadowTLS.json
+        curl -Lo /etc/shadowtls/user-nekorayconfig.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Client/ShadowTLS-nekoray.json
+        curl -Lo /etc/shadowtls/user-nekoboxconfig.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Client/ShadowTLS-nekobox.json
+        curl -Lo /etc/shadowtls/nekorayconfig.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Client/ShadowTLS-nekoray.json
+        curl -Lo /etc/shadowtls/nekoboxconfig.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Client/ShadowTLS-nekobox.json
+        curl -Lo /etc/systemd/system/ST.service https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/ST.service
         systemctl daemon-reload
 
         stpass=$(openssl rand -hex 16)
@@ -609,11 +609,11 @@ modify_shadowtls_config() {
 
         mkdir -p /etc/shadowtls
 
-        curl -Lo /etc/shadowtls/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/ShadowTLS.json
-        curl -Lo /etc/shadowtls/user-nekorayconfig.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Client/ShadowTLS-nekoray.json
-        curl -Lo /etc/shadowtls/user-nekoboxconfig.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Client/ShadowTLS-nekobox.json
-        curl -Lo /etc/shadowtls/nekorayconfig.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Client/ShadowTLS-nekoray.json
-        curl -Lo /etc/shadowtls/nekoboxconfig.txt https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Client/ShadowTLS-nekobox.json
+        curl -Lo /etc/shadowtls/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/ShadowTLS.json
+        curl -Lo /etc/shadowtls/user-nekorayconfig.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Client/ShadowTLS-nekoray.json
+        curl -Lo /etc/shadowtls/user-nekoboxconfig.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Client/ShadowTLS-nekobox.json
+        curl -Lo /etc/shadowtls/nekorayconfig.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Client/ShadowTLS-nekoray.json
+        curl -Lo /etc/shadowtls/nekoboxconfig.txt https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Client/ShadowTLS-nekobox.json
 
         stpass=$(openssl rand -hex 16)
         sspass=$(openssl rand -hex 16)
@@ -696,8 +696,8 @@ install_ws() {
 
         mkdir -p /etc/ws
 
-        curl -Lo /etc/ws/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/vless-WebSocket.json
-        curl -Lo /etc/systemd/system/WS.service https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/WS.service
+        curl -Lo /etc/ws/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/vless-WebSocket.json
+        curl -Lo /etc/systemd/system/WS.service https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/WS.service
         systemctl daemon-reload
 
         uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -753,7 +753,7 @@ modify_ws_config() {
 
         mkdir -p /etc/ws
 
-        curl -Lo /etc/ws/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/vless-WebSocket.json
+        curl -Lo /etc/ws/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/vless-WebSocket.json
 
         uuid=$(cat /proc/sys/kernel/random/uuid)
         sed -i "s/UUID/$uuid/" /etc/ws/config.json
@@ -824,8 +824,8 @@ install_grpc() {
 
         mkdir -p /etc/grpc
 
-        curl -Lo /etc/grpc/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/vless-gRPC.json
-        curl -Lo /etc/systemd/system/GS.service https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/GS.service
+        curl -Lo /etc/grpc/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/vless-gRPC.json
+        curl -Lo /etc/systemd/system/GS.service https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/GS.service
         systemctl daemon-reload
 
         uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -883,7 +883,7 @@ modify_grpc_config() {
 
         mkdir -p /etc/grpc
 
-        curl -Lo /etc/grpc/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/vless-gRPC.json
+        curl -Lo /etc/grpc/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/vless-gRPC.json
 
         uuid=$(cat /proc/sys/kernel/random/uuid)
         service_name=$(openssl rand -hex 4)
@@ -956,8 +956,8 @@ install_naive() {
 
         mkdir -p /etc/naive
 
-        curl -Lo /etc/naive/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Naive.json
-        curl -Lo /etc/systemd/system/NS.service https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/NS.service
+        curl -Lo /etc/naive/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Naive.json
+        curl -Lo /etc/systemd/system/NS.service https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/NS.service
         systemctl daemon-reload
 
         password=$(openssl rand -hex 8)
@@ -1013,7 +1013,7 @@ modify_naive_config() {
 
         mkdir -p /etc/naive
 
-        curl -Lo /etc/naive/config.json https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/Sing-Box/Server/Naive.json
+        curl -Lo /etc/naive/config.json https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box/Server/Naive.json
 
         password=$(openssl rand -hex 8)
         sed -i "s/PASSWORD/$password/" /etc/naive/config.json
@@ -1326,7 +1326,7 @@ show_warp_config() {
 }
 
 warp_key_gen() {
-    curl -fsSL https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/WARP%2B-sing-box-config-generator/key-generator.py -o key-generator.py
+    curl -fsSL https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP%2B-sing-box-config-generator/key-generator.py -o key-generator.py
     python3 key-generator.py
     rm -f key-generator.py
     clear
@@ -1335,9 +1335,9 @@ warp_key_gen() {
 install_warp() {
     rm -rf /etc/sbw
     mkdir /etc/sbw && cd /etc/sbw || exit
-    wget https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/WARP%2B-sing-box-config-generator/main.sh
-    wget https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/WARP%2B-sing-box-config-generator/warp-api
-    wget https://raw.githubusercontent.com/TheyCallMeSecond/config-examples/main/WARP%2B-sing-box-config-generator/warp-go
+    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP%2B-sing-box-config-generator/main.sh
+    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP%2B-sing-box-config-generator/warp-api
+    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP%2B-sing-box-config-generator/warp-go
     chmod +x main.sh
     ./main.sh
     rm -f warp-go warp-api main.sh warp.conf
