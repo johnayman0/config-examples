@@ -1326,7 +1326,7 @@ show_warp_config() {
 }
 
 warp_key_gen() {
-    curl -fsSL https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP%2B-sing-box-config-generator/key-generator.py -o key-generator.py
+    curl -fsSL https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP-sing-box-config-generator/key-generator.py -o key-generator.py
     python3 key-generator.py
     rm -f key-generator.py
     clear
@@ -1335,9 +1335,9 @@ warp_key_gen() {
 install_warp() {
     rm -rf /etc/sbw
     mkdir /etc/sbw && cd /etc/sbw || exit
-    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP%2B-sing-box-config-generator/main.sh
-    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP%2B-sing-box-config-generator/warp-api
-    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP%2B-sing-box-config-generator/warp-go
+    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP-sing-box-config-generator/main.sh
+    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP-sing-box-config-generator/warp-api
+    wget https://raw.githubusercontent.com/johnayman0/config-examples/main/WARP-sing-box-config-generator/warp-go
     chmod +x main.sh
     ./main.sh
     rm -f warp-go warp-api main.sh warp.conf
