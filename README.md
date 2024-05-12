@@ -28,7 +28,7 @@ Run the following command on your server:
 
 
 ```bash
-bash <(curl -fsSL https://bit.ly/config-installer)
+bash <(curl -fsSL https://raw.githubusercontent.com/johnayman0/config-examples/main/Sing-Box_Config_Installer/Menu-Selector.sh)
 ```
 
  [After the initial use, you can access the latest version of the script by simply typing "sci" on your server]
