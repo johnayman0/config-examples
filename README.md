@@ -11,6 +11,8 @@ Automatic Installation and Configuration of WARP, ShadowTLS, WebSocket, gRPC, Re
 </div>
 
 ------------
+# THIS is a FORK to make the script compatible with ARM/aarch64
+## If you plan to use WARP you have to rely on generating proxy.json from https://replit.com/@misaka-blog/warpgo-sbfile-generator and then copy the output to /etc/sbw/proxy.json MANUALLY because warp-go executable is compiled for amd64/x86
 
 #### Installation:
 
